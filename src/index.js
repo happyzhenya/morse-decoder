@@ -40,21 +40,22 @@ const MORSE_TABLE = {
 function decode(expr) {
     // write your solution here
    
-   let strResult='';
-   let newExpr='';
-   let str=''
-   let fullStr=''
+   
+  let newExpr=''
+ 
+   let str='';
+   let StrRes='';
 for (let i=0; i<expr.length; i+=10)
 {
     newExpr=expr.slice(i, i+10)
 
 
 if (newExpr==='**********'){
-    fullStr+='';
+    StrRes+=' ';
 }else
 
 {
-for (let j=0; j<newExpr.length; j=+2){
+for (let j=0; j<newExpr.length; j+=2){
     if(newExpr[j]+''+newExpr[j+1]==="10"){
         str+='.';
     }
@@ -65,18 +66,18 @@ for (let j=0; j<newExpr.length; j=+2){
 
     }
 }
-fullStr+=MORSE_TABLE[str];
+StrRes+=MORSE_TABLE[str];
 str='';
 
 
 
 }
 }
-return fullStr;
+return StrRes;
    
     
 
-}
+} 
 
 module.exports = {
     decode
